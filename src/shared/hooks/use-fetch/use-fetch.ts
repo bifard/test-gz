@@ -1,14 +1,14 @@
 import { ResponseTypePromise, UseFetchType } from "./type";
 import { useCallback, useEffect, useState } from "react";
 
-export const useFetch: UseFetchType = (fetchFunction, options) => {
+export const useFetch: UseFetchType = (fetchFunction, initialOptions) => {
   const [data, setData] = useState<null | ResponseTypePromise<typeof fetchFunction>>(null);
   const [loading, setLoading] = useState(false);
 
   const fetching = useCallback(
-    async (arg: typeof options) => {
+    async (options: typeof initialOptions) => {
       setLoading(true);
-      const data = await fetchFunction(...arg).then((res) => {
+      const data = await fetchFunction(...options).then((res) => {
         setLoading(false);
         return res;
       });
@@ -18,8 +18,8 @@ export const useFetch: UseFetchType = (fetchFunction, options) => {
   );
 
   useEffect(() => {
-    fetching(options);
-  }, [fetching, ...options]);
+    fetching(initialOptions);
+  }, []);
 
-  return [data, loading];
+  return [data, loading, fetching];
 };

@@ -3,7 +3,7 @@ import { Paper, Typography } from "@mui/material";
 
 import { IPost } from "../shared/type";
 
-export const PistItem: FC<IPost & { FavoriteButton?: ReactNode }> = ({ title, body, FavoriteButton }) => {
+export const PistItem: FC<IPost & { FavoriteButton?: ReactNode }> = ({ title, body, FavoriteButton, id }) => {
   return (
     <Paper sx={{ padding: 2 }}>
       {FavoriteButton}

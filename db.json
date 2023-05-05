@@ -130,5 +130,19 @@
       "title": "est et quae odit qui non",
       "body": "similique esse doloribus nihil accusamus\nomnis dolorem fuga consequuntur reprehenderit fugit recusandae temporibus\nperspiciatis cum ut laudantium\nomnis aut molestiae vel vero"
     }
+  ],
+  "favorites": [
+    {
+      "postId": 26,
+      "id": 3
+    },
+    {
+      "postId": 3,
+      "id": 5
+    },
+    {
+      "postId": 2,
+      "id": 7
+    }
   ]
 }
